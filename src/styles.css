@@ -3863,10 +3863,11 @@ select option {
 .db-table {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .tr {
-  min-width: 760px;
+  min-width: 900px;
   display: grid;
   grid-template-columns: 1.8fr 0.8fr 0.9fr 1fr 1.2fr 28px;
   align-items: center;
@@ -3874,11 +3875,11 @@ select option {
   border: 0;
   border-bottom: 1px solid var(--line);
   background: transparent;
-  padding: 10px 14px;
+  padding: 10px 16px;
   text-align: left;
   font-size: 12px;
   color: var(--text-soft);
-  transition: background 0.12s;
+  transition: background 0.12s ease;
 }
 
 .tr:last-of-type { border-bottom: 0; }
@@ -3891,10 +3892,12 @@ select option {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  user-select: none;
 }
 
 .question-cols-v2 {
-  grid-template-columns: 2.2fr 0.9fr 1.2fr 0.9fr 0.8fr 0.6fr;
+  grid-template-columns: minmax(260px, 2.5fr) minmax(130px, 1.2fr) minmax(170px, 1.5fr) 140px 115px 75px;
+  gap: 16px;
 }
 
 .name-cell-interactive {
@@ -3902,56 +3905,111 @@ select option {
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .name-cell-interactive .q-icon {
   color: var(--text-dim);
   font-size: 12px;
+  flex-shrink: 0;
 }
 
 .name-cell-interactive strong {
   color: var(--text);
   font-weight: 600;
+  font-size: 13px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
 }
 
 .name-cell-interactive:hover strong { color: var(--blue, #3b82f6); }
 
+.cell-domain {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
 .domain-tag {
-  background: var(--card-inner);
+  background: var(--card-inner, #222);
   border: 1px solid var(--line);
-  padding: 2px 7px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 5px;
   font-size: 11px;
-  color: var(--text);
+  font-weight: 500;
+  color: var(--text-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: inline-block;
+  line-height: 1.4;
 }
 
 .lesson-module-cell {
   display: flex;
   flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  overflow: hidden;
 }
 
-.lesson-module-cell span { color: var(--text); font-size: 11.5px; font-weight: 500; }
-.lesson-module-cell small { color: var(--text-dim); font-size: 10px; }
+.lesson-module-cell .lesson-title,
+.lesson-module-cell span {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
 
-.row-actions { display: flex; justify-content: flex-end; }
+.lesson-module-cell .module-title,
+.lesson-module-cell small {
+  color: var(--text-muted);
+  font-size: 10.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.cell-progress {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.cell-stage {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.row-actions { display: flex; justify-content: flex-end; align-items: center; }
 
 .row-btn-action {
   border: 1px solid var(--line);
-  background: var(--card-inner);
+  background: var(--card-inner, #242424);
   color: var(--text-soft);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+  padding: 4px 9px;
+  border-radius: 5px;
+  font-size: 11.5px;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  transition: all 0.15s;
+  white-space: nowrap;
+  transition: all 0.15s ease;
 }
 
-.row-btn-action:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+.row-btn-action:hover { background: var(--blue, #2563eb); color: #fff; border-color: var(--blue, #2563eb); }
 
 .empty-results-dash {
   padding: 42px 20px;

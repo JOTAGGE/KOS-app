@@ -3992,28 +3992,28 @@ function DashboardHome({
             {filteredQuestions.length > 0 ? (
               filteredQuestions.map((q) => (
                 <div className="tr question-cols-v2 item-row" key={q.id}>
-                  <div className="name-cell-interactive" onClick={() => onQuestion(q)}>
+                  <div className="name-cell-interactive" onClick={() => onQuestion(q)} title={q.title}>
                     <span className="q-icon">□</span>
                     <strong>{q.title}</strong>
                   </div>
-                  <span>
-                    <span className="domain-tag">{q.domain}</span>
-                  </span>
-                  <span className="lesson-module-cell">
-                    <span>{q.lesson}</span>
-                    <small>{q.module}</small>
-                  </span>
-                  <span>
+                  <div className="cell-domain">
+                    <span className="domain-tag" title={q.domain}>{q.domain}</span>
+                  </div>
+                  <div className="lesson-module-cell" title={`${q.lesson}${q.module ? ` • ${q.module}` : ''}`}>
+                    <span className="lesson-title">{q.lesson}</span>
+                    {q.module && <small className="module-title">{q.module}</small>}
+                  </div>
+                  <div className="cell-progress">
                     <Progress value={q.progress} />
-                  </span>
-                  <span>
+                  </div>
+                  <div className="cell-stage">
                     <StageBadge stage={q.stage} />
-                  </span>
+                  </div>
                   <div className="row-actions">
                     <button
                       className="row-btn-action"
                       onClick={() => onQuestion(q)}
-                      title="Abrir Página da Question"
+                      title="Abrir Página da Pergunta"
                     >
                       Abrir <ChevronRight size={13} />
                     </button>
