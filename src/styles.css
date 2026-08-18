@@ -14675,3 +14675,145 @@ select option {
   --input-bg: #ffffff;
   --input-border: #cbd5e1;
 }
+
+/* 8. Comprehensive Light Theme Fixes for Study Session, Vault & Inputs */
+[data-theme="light"] .interactive-tags-box {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+[data-theme="light"] .tag-input-row input {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .tag-input-row input::placeholder {
+  color: #94a3b8 !important;
+}
+
+[data-theme="light"] .btn-tag-add {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .btn-tag-add:hover {
+  background: #1d4ed8 !important;
+}
+
+[data-theme="light"] .interactive-chip {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .highlight-chip {
+  color: #b45309 !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  background: rgba(245, 158, 11, 0.1) !important;
+}
+
+[data-theme="light"] .example-chip {
+  color: #1d4ed8 !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  background: rgba(59, 130, 246, 0.1) !important;
+}
+
+[data-theme="light"] .application-chip {
+  color: #047857 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  background: rgba(16, 185, 129, 0.1) !important;
+}
+
+[data-theme="light"] .concept-chip {
+  color: #7e22ce !important;
+  border-color: rgba(168, 85, 247, 0.4) !important;
+  background: rgba(168, 85, 247, 0.1) !important;
+}
+
+[data-theme="light"] .objective-chip {
+  color: #047857 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  background: rgba(16, 185, 129, 0.1) !important;
+}
+
+[data-theme="light"] .difficulty-chip {
+  color: #c2410c !important;
+  border-color: rgba(249, 115, 22, 0.4) !important;
+  background: rgba(249, 115, 22, 0.1) !important;
+}
+
+[data-theme="light"] .multi-item-row-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .multi-item-row-card.insight-row {
+  border-left: 3px solid #eab308 !important;
+  background: #fefce8 !important;
+  border-color: #fef08a !important;
+}
+
+[data-theme="light"] .multi-item-row-card.doubt-row {
+  border-left: 3px solid #ef4444 !important;
+  background: #fef2f2 !important;
+  border-color: #fecaca !important;
+}
+
+[data-theme="light"] .multi-item-row-card .item-text {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .add-ai-lesson-inline-form {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+[data-theme="light"] .add-ai-lesson-inline-form select,
+[data-theme="light"] .add-ai-lesson-inline-form input[type="text"],
+[data-theme="light"] .add-ai-lesson-inline-form textarea {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .add-ai-lesson-inline-form select option {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .session-ai-card-item {
+  background: #ffffff !important;
+  border: 1px solid #bfdbfe !important;
+}
+
+[data-theme="light"] .ai-card-item-snippet {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .vault-insight-row-item,
+[data-theme="light"] .vault-doubt-row-item {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] .vault-insight-row-item p,
+[data-theme="light"] .vault-doubt-row-item p {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .live-study-pane,
+[data-theme="light"] .live-vault-scroll {
+  background: #ffffff !important;
+}
+
+[data-theme="light"] .category-pill,
+[data-theme="light"] .module-pill,
+[data-theme="light"] .difficulty-pill,
+[data-theme="light"] .date-pill,
+[data-theme="light"] .stage-pill {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
