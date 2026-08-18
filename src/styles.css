@@ -4055,7 +4055,7 @@ select option {
   font-weight: 700;
   letter-spacing: -0.035em;
   margin: 5px 0 6px;
-  color: #fff;
+  color: var(--text, #ffffff);
 }
 
 .notion-title p, .page-title > div > p:last-child {
@@ -14851,4 +14851,146 @@ select option {
   background: #f8fafc !important;
   border-color: #94a3b8 !important;
   color: #0f172a !important;
+}
+
+/* 9. Knowledge Databases View in Light Mode */
+[data-theme="light"] .notion-title h1,
+[data-theme="light"] .page-title h1 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .notion-title p,
+[data-theme="light"] .page-title p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .breadcrumb-mini {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .db-tabs-bar {
+  border-bottom-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .db-tabs-bar button {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .db-tabs-bar button:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+[data-theme="light"] .db-tabs-bar button.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25) !important;
+}
+
+[data-theme="light"] .db-tabs-bar button .tab-pill {
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+[data-theme="light"] .db-tabs-bar button.active .tab-pill {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .database-toolbar-v2 {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+[data-theme="light"] .db-view-selector {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+[data-theme="light"] .view-btn {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .view-btn:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .view-btn.active {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .db-tags-toggle-btn {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .db-tags-toggle-btn:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .db-tags-toggle-btn.active {
+  background: #eff6ff !important;
+  border-color: #3b82f6 !important;
+  color: #2563eb !important;
+}
+
+[data-theme="light"] .db-search-inline {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .db-search-inline input {
+  background: transparent !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .db-board-group-selector {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .db-board-group-selector select {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .lesson-count-badge {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .rel-tag {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .priority-pill,
+[data-theme="light"] .interest-pill {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+[data-theme="light"] .notion-db-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="light"] .notion-table-wrapper {
+  background: #ffffff !important;
 }
