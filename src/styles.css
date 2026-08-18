@@ -5346,7 +5346,7 @@ select option {
 .session-header-banner h1 {
   font-size: 28px;
   font-weight: 800;
-  color: #fff;
+  color: var(--text, #ffffff);
   letter-spacing: -0.03em;
   margin: 8px 0 4px;
 }
@@ -14816,4 +14816,39 @@ select option {
   background: #f1f5f9 !important;
   border-color: #cbd5e1 !important;
   color: #334155 !important;
+}
+
+[data-theme="light"] .session-header-banner h1 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .session-header-banner p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .session-header-banner p strong {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .spark-badge {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .spark-badge svg {
+  color: #d97706 !important;
+}
+
+[data-theme="light"] .btn-session-history {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn-session-history:hover {
+  background: #f8fafc !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
 }
