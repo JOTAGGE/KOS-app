@@ -3,6 +3,8 @@ import {
   User,
   onAuthStateChanged,
   signInWithPopup,
+  signInWithCredential,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   updateProfile,
@@ -11,6 +13,8 @@ import {
   updatePassword,
   deleteUser
 } from "firebase/auth";
+import { Capacitor } from "@capacitor/core";
+import { FirebaseAuthentication } from "@capacitor-firebase/authentication";
 import { auth, googleProvider } from "./config";
 import {
   createUserProfileDocument,
@@ -80,14 +84,33 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signInWithGoogle = async () => {
     try {
-      const res = await signInWithPopup(auth, googleProvider);
-      if (res.user) {
-        await createUserProfileDocument(
-          res.user.uid,
-          res.user.email || "",
-          res.user.displayName || "",
-          res.user.photoURL || ""
-        );
+      if (Capacitor.isNativePlatform()) {
+        // Fluxo Nativo Android/iOS via Google Play Services (Bottom Sheet)
+        const result = await FirebaseAuthentication.signInWithGoogle();
+        const idToken = result.credential?.idToken;
+        if (idToken) {
+          const credential = GoogleAuthProvider.credential(idToken);
+          const res = await signInWithCredential(auth, credential);
+          if (res.user) {
+            await createUserProfileDocument(
+              res.user.uid,
+              res.user.email || "",
+              res.user.displayName || "",
+              res.user.photoURL || ""
+            );
+          }
+        }
+      } else {
+        // Fluxo Web / Desktop (Pop-up)
+        const res = await signInWithPopup(auth, googleProvider);
+        if (res.user) {
+          await createUserProfileDocument(
+            res.user.uid,
+            res.user.email || "",
+            res.user.displayName || "",
+            res.user.photoURL || ""
+          );
+        }
       }
     } catch (error) {
       console.error("Erro ao autenticar com Google:", error);
@@ -152,6 +175,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const logout = async () => {
     try {
+      if (Capacitor.isNativePlatform()) {
+        try {
+          await FirebaseAuthentication.signOut();
+        } catch (_) {}
+      }
       await firebaseSignOut(auth);
       setUser(null);
       setUserProfile(null);

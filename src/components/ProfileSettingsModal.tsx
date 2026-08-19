@@ -1638,7 +1638,9 @@ export function ProfileSettingsModal({
               {activeTab === "about" && (
                 <div className="settings-section-stack">
                   <div className="settings-card about-hero-card">
-                    <div className="about-brand-logo">K</div>
+                    <div className="about-brand-logo">
+                      <img src="./kos.png" alt="KOS" className="brand-logo-img" />
+                    </div>
                     <h2>KOS — Knowledge Operating System</h2>
                     <span className="about-version-badge">Versão 2.4.0 (Build 2026.08)</span>
                     <p style={{ fontSize: "13px", color: "var(--text-dim)", lineHeight: "1.6", maxWidth: "480px", margin: "10px auto 0" }}>

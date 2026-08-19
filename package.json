@@ -12,9 +12,11 @@
     "electron:build": "npm run build && electron-builder --win --x64",
     "cap:add:android": "cap add android",
     "cap:sync": "npm run build && cap sync android",
-    "cap:open:android": "cap open android"
+    "cap:open:android": "cap open android",
+    "build:apk": "npm run cap:sync && cd android && gradlew assembleDebug"
   },
   "dependencies": {
+    "@capacitor-firebase/authentication": "^7.5.0",
     "@capacitor/android": "^7.0.1",
     "@capacitor/cli": "^7.0.1",
     "@capacitor/core": "^7.0.1",

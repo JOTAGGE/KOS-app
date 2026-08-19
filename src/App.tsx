@@ -864,7 +864,9 @@ function App() {
     return (
       <div className="login-screen-overlay">
         <div style={{ textAlign: "center", color: "#fff" }}>
-          <div className="login-brand-logo">K</div>
+          <div className="login-brand-logo">
+            <img src="./kos.png" alt="KOS" className="brand-logo-img" />
+          </div>
           <p style={{ marginTop: "12px", color: "var(--text-dim)", fontSize: "13px" }}>Carregando Knowledge OS...</p>
         </div>
       </div>
@@ -879,7 +881,9 @@ function App() {
     <div className="app-shell">
       <aside className={`sidebar ${mobileOpen ? "open" : ""}`}>
         <div className="workspace" onClick={() => go("home")}>
-          <div className="workspace-icon">K</div>
+          <div className="workspace-icon">
+            <img src="./kos.png" alt="KOS" className="workspace-logo-img" />
+          </div>
           <div>
             <strong>KOS</strong>
             <span>Knowledge OS</span>

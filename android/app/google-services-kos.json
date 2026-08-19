@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "618366847080",
+    "project_id": "kos-study",
+    "storage_bucket": "kos-study.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618366847080:android:a0436a29f94ac87139d3dd",
+        "android_client_info": {
+          "package_name": "app.kos.knowledgeos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618366847080-edehhbptgr91eim6rr6jf3crmu0gmcei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzUfeXgctVqPCRq5M6vP2Q8kR95RUg5JA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618366847080-edehhbptgr91eim6rr6jf3crmu0gmcei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

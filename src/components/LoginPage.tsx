@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Sparkles, Mail, Lock, User, LogIn, UserPlus, Shield, AlertCircle, CheckCircle2, ArrowRight } from "lucide-react";
+import { Sparkles, Mail, Lock, User, LogIn, UserPlus, Shield, AlertCircle, CheckCircle2, ArrowRight, Info } from "lucide-react";
+import { Capacitor } from "@capacitor/core";
 import { useAuth } from "../firebase/authContext";
 
 export function LoginPage() {
@@ -18,6 +19,17 @@ export function LoginPage() {
 
   const mapAuthError = (err: any): string => {
     const code = err?.code || "";
+    const message = (err?.message || "").toLowerCase();
+    
+    if (
+      code === "auth/missing-initial-state" ||
+      message.includes("missing initial state") ||
+      message.includes("sessionstorage") ||
+      message.includes("storage-partitioned")
+    ) {
+      return "No aplicativo móvel, o login via Google é restrito pelo WebView. Recomendamos criar uma conta com seu E-mail e Senha (leva 10 segundos) ou entrar como Visitante!";
+    }
+
     switch (code) {
       case "auth/invalid-email":
         return "O endereço de e-mail inserido é inválido.";
@@ -28,15 +40,19 @@ export function LoginPage() {
       case "auth/invalid-credential":
         return "E-mail ou senha incorretos. Verifique suas credenciais.";
       case "auth/email-already-in-use":
-        return "Este e-mail já está em uso. Faça login ou use outro e-mail.";
+        return "Este e-mail já está cadastrado. Faça login com ele ou use outro e-mail.";
       case "auth/weak-password":
         return "A senha deve ter pelo menos 6 caracteres.";
       case "auth/too-many-requests":
-        return "Muitas tentativas malsucedidas. Por segurança, tente novamente mais tarde.";
+        return "Muitas tentativas malsucedidas. Por segurança, aguarde alguns instantes.";
       case "auth/network-request-failed":
-        return "Falha de conexão com a rede. Verifique sua internet ou suas chaves do Firebase.";
+        return "Falha de conexão com a rede. Verifique sua internet.";
       case "auth/popup-closed-by-user":
         return "A janela de login com Google foi fechada antes de concluir.";
+      case "auth/popup-blocked":
+        return "A janela de autenticação foi bloqueada pelo dispositivo. Utilize o login por E-mail e Senha.";
+      case "auth/unauthorized-domain":
+        return "Domínio não autorizado nas configurações do Firebase Auth.";
       default:
         return err?.message || "Ocorreu um erro durante a autenticação. Tente novamente.";
     }
@@ -128,7 +144,7 @@ export function LoginPage() {
         {/* Brand Header */}
         <div className="login-brand-head">
           <div className="login-brand-logo">
-            <span>K</span>
+            <img src="./kos.png" alt="Knowledge OS" className="brand-logo-img" />
           </div>
           <h1>Knowledge OS</h1>
           <p>Seu sistema de conhecimento, retenção no ciclo KOS e estudo ativo.</p>
